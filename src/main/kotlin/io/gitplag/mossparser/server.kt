@@ -6,7 +6,7 @@ import spark.Response
 import spark.Spark
 
 fun initServer() {
-    Spark.port(System.getProperty("MOSSPARSER_PORT").toInt())
+    Spark.port(System.getenv("MOSSPARSER_PORT").toInt())
 
     Spark.get("/parse") { request, response ->
         execute(request, response) { mossResultLink, mode ->
