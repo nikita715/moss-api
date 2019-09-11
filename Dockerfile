@@ -21,6 +21,6 @@ WORKDIR $MOSSPARSER_HOME
 RUN apk add --update openjdk8 \
     && rm -rf /var/cache/apk/*
 
-COPY --from=init $MOSSPARSER_HOME/build/libs/moss-parser-0.1-all.jar .
+COPY --from=init $MOSSPARSER_HOME/build/libs/mossparser-0.1-all.jar .
 
-CMD java -jar $MOSSPARSER_HOME/moss-parser-0.1-all.jar
+CMD java -jar $MOSSPARSER_HOME/mossparser-0.1-all.jar
