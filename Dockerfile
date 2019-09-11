@@ -9,7 +9,7 @@ RUN apk add --update openjdk8 git \
 
 RUN git clone https://github.com/nikita715/mossparser.git $MOSSPARSER_HOME \
     && chmod +x gradlew \
-    && ./gradlew build
+    && ./gradlew shadowJar
 
 FROM alpine:3.7 as prod
 
