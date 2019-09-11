@@ -1,9 +1,21 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
+buildscript {
+    ext.kotlin_version = '1.3.50'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
+apply plugin: 'application'
+apply plugin: 'kotlin'
+
 group 'io.gitplag'
-version '1.0-SNAPSHOT'
+version '0.1'
+
+mainClassName = 'io.gitplag.mossparser.MainKt'
 
 repositories {
     jcenter()
@@ -11,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation 'com.sparkjava:spark-core:2.9.1'
 
@@ -31,3 +43,10 @@ compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
 test {
     useJUnitPlatform()
 }
+
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'io.gitplag.mossparser.MainKt'
+//    }
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+//}

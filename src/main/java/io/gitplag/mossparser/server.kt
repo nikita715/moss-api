@@ -1,14 +1,12 @@
 package io.gitplag.mossparser
 
 import com.beust.klaxon.Klaxon
-import org.apache.log4j.BasicConfigurator
 import spark.Request
 import spark.Response
 import spark.Spark
 
-fun main() {
-    BasicConfigurator.configure()
-    Spark.port(8082)
+fun initServer() {
+    Spark.port(System.getProperty("MOSSPARSER_PORT").toInt())
 
     Spark.get("/parse") { request, response ->
         execute(request, response) { mossResultLink, mode ->
@@ -33,7 +31,11 @@ fun main() {
     }
 }
 
-fun execute(request: Request, response: Response, func: (mossResultLink: String, mode: Mode) -> String): String {
+private fun execute(
+    request: Request,
+    response: Response,
+    func: (mossResultLink: String, mode: Mode) -> String
+): String {
     response.header("Access-Control-Allow-Origin", "*")
     val mossResultLink = request.queryParams("url")
     val mode = try {
