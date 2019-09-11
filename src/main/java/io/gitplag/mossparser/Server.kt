@@ -34,6 +34,7 @@ fun main() {
 }
 
 fun execute(request: Request, response: Response, func: (mossResultLink: String, mode: Mode) -> String): String {
+    response.header("Access-Control-Allow-Origin", "*")
     val mossResultLink = request.queryParams("url")
     val mode = try {
         request.queryParams("mode")?.toUpperCase()?.let { Mode.valueOf(it) }
