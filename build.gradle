@@ -9,13 +9,12 @@ buildscript {
     }
 }
 
-apply plugin: 'application'
 apply plugin: 'kotlin'
 
 group 'io.gitplag'
 version '0.1'
 
-mainClassName = 'io.gitplag.mossparser.MainKt'
+def mainClassName = 'io.gitplag.mossparser.MainKt'
 
 repositories {
     jcenter()
@@ -37,16 +36,20 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
 compileKotlin { kotlinOptions.jvmTarget = "1.8" }
 compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
 
 test {
     useJUnitPlatform()
 }
-
-//jar {
-//    manifest {
-//        attributes 'Main-Class': 'io.gitplag.mossparser.MainKt'
-//    }
-//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-//}
