@@ -19,7 +19,7 @@ apply plugin: "com.github.johnrengelman.shadow"
 group 'io.gitplag'
 version '0.1'
 
-def mainClassName = 'io.gitplag.mossparser.MainKt'
+def mainClassName = 'io.gitplag.mossapi.MainKt'
 
 repositories {
     jcenter()

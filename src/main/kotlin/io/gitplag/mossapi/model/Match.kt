@@ -1,4 +1,4 @@
-package io.gitplag.mossparser.model
+package io.gitplag.mossapi.model
 
 data class Match(
     val name1: String,

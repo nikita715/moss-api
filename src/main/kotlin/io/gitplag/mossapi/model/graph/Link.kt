@@ -1,4 +1,4 @@
-package io.gitplag.mossparser.model.graph
+package io.gitplag.mossapi.model.graph
 
 class Link(
     val first: String,

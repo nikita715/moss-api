@@ -1,4 +1,4 @@
-package io.gitplag.mossparser
+package io.gitplag.mossapi
 
 enum class Mode {
     PAIRS,

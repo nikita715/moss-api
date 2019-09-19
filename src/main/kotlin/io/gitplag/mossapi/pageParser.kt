@@ -1,15 +1,15 @@
-package io.gitplag.mossparser
+package io.gitplag.mossapi
 
-import io.gitplag.mossparser.model.Lines
-import io.gitplag.mossparser.model.Match
-import io.gitplag.mossparser.model.Result
-import io.gitplag.mossparser.model.graph.GraphData
-import io.gitplag.mossparser.model.graph.Link
-import io.gitplag.mossparser.model.graph.Node
+import io.gitplag.mossapi.model.Lines
+import io.gitplag.mossapi.model.Match
+import io.gitplag.mossapi.model.Result
+import io.gitplag.mossapi.model.graph.GraphData
+import io.gitplag.mossapi.model.graph.Link
+import io.gitplag.mossapi.model.graph.Node
 import org.jsoup.Jsoup
 
-fun parseToGraph(mossResultLink: String, mode: Mode): GraphData {
-    val result = parseMossPage(mossResultLink, mode)
+fun parseToGraph(mossResultLink: String): GraphData {
+    val result = parseMossPage(mossResultLink, Mode.PAIRS)
     val names = mutableSetOf<String>()
     val links = mutableListOf<Link>()
     result.matches.forEach { match ->
