@@ -8,8 +8,8 @@ You can launch it in [Docker](https://www.docker.com/) from the [image](https://
 
 Data can be formatted in two types:
 
-- Simple type with pairs of files and their similarity
-
+- Simple type with pairs of files and their similarity (and matched lines if required);
+- Graph type that can be used to build a graph of similarity. Fully compatible with [data2graph](https://github.com/tcibinan/data2graph).
 
 The service is launched at `localhost:4567`, but you can change the port by setting `MOSSPARSER_PORT` environment variable in docker container.
 
