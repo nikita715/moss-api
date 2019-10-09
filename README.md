@@ -19,4 +19,4 @@ The service is launched at `localhost:4567`, but you can change the port by sett
 - `localhost:4567/parse-graph/{moss_result_id}`
 - `localhost:4567/parse-graph?url={moss_result_url}`
 
-You can add url parameter `mode=full` to each route to extract matched lines of analysed files.
+You can use `/parse` with url parameter `mode=full` to extract matched lines of analysed files.
