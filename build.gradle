@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.sparkjava:spark-core:2.9.1'
 
     implementation 'org.jsoup:jsoup:1.11.3'
-    implementation 'com.beust:klaxon:5.0.9'
+    implementation 'com.beust:klaxon:5.4'
 
     implementation 'org.slf4j:slf4j-api:1.7.28'
     implementation 'org.slf4j:slf4j-simple:1.7.28'
