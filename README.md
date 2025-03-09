@@ -2,7 +2,7 @@
 
 # moss-api
 
-A service for parsing of [Moss](http://moss.stanford.edu) plagiarism analysis results.
+A service for parsing of [Moss](http://theory.stanford.edu/~aiken/moss/) plagiarism analysis results.
 
 You can launch it in [Docker](https://www.docker.com/) from the [image](https://hub.docker.com/r/nikstep/moss-api) and send there ids of moss analysis results to extract the analysis data in [json](http://www.json.org/) format.
 
